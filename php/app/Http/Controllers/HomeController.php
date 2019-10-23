@@ -10,7 +10,6 @@ use App\Services\PthreadsService;
 use App\Services\TemplateService;
 use App\Services\WechatService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -59,7 +58,6 @@ class HomeController extends Controller
             $oWechatService = new WechatService();
             $sAccessToken = $oWechatService->getAccessTokenByApi($sUrl);
             $isSuccess = $sAccessToken ? self::$ErrorCode['OK'] : self::$ErrorCode['Fail'];
-            //Log::info('******************' . $isSuccess);
         }
         $aTempInfo = [];
         if ($isSuccess) {

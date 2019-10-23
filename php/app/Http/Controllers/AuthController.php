@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    /** 查询一个用户拥有的项目权限 */
+    /**
+	*查询一个用户拥有的项目权限
+	*/
     public function ownedAuth(Request $request)
     {
         $iManagerId = $request->input('managerId');
@@ -16,7 +18,9 @@ class AuthController extends Controller
         return $sAuthIds;
     }
 
-    /** 分配项目权限 */
+    /**
+	*分配项目权限
+	*/
     public function assignAuth(Request $request)
     {
         if($request->isMethod("GET")){
